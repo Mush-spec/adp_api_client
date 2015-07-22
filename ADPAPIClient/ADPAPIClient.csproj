@@ -53,16 +53,16 @@
     <Compile Include="APIConstants.cs" />
     <Compile Include="Case.cs" />
     <Compile Include="CaseType.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="createCaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="createCaseForm.Designer.cs">
+      <DependentUpon>createCaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="createCaseForm.resx">
+      <DependentUpon>createCaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
