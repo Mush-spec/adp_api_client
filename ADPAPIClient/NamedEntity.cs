@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ADPAPIClient
 {
-    class CaseType
+    class NamedEntity
     {
         public int Id { get; set; }
         public string Description { get; set; }
 
 
-        public CaseType(int id, string description)
+        public NamedEntity(int id, string description)
         {
             this.Id = id;
             this.Description = description;

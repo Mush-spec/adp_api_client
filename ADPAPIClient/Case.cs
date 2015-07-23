@@ -9,11 +9,19 @@ namespace ADPAPIClient
 {
     class Case
     {
-        public string advocateEmail;
-        public string caseNumber;
-        public string caseTypeId;
-        public string cmsNumber;
+        public string advocateEmail { private get; set; }
+        public string caseNumber { private get; set; }
+        public string caseTypeId { private get; set; }
+        public string cmsNumber { private get; set; }
+        public DateTime trialStartDate { private get; set; }
 
+
+        public Case()
+        {
+            Console.WriteLine("Case instantiated");
+        }
+
+        /*
         public Case (string advocateEmail, string caseNumber, string caseTypeId, string cmsNumber)
         {
             this.advocateEmail = advocateEmail;
@@ -21,7 +29,7 @@ namespace ADPAPIClient
             this.caseTypeId = caseTypeId;
             this.cmsNumber = cmsNumber;
         }
-
+        */
 
         public string toJson()
         {
@@ -30,6 +38,7 @@ namespace ADPAPIClient
             myDict.Add("case_number", this.caseNumber);
             myDict.Add("case_type", this.caseTypeId);
             myDict.Add("cms_number", this.cmsNumber);
+            myDict.Add("trial_start_date", Convert.ToString(this.trialStartDate));
 
             return JsonConvert.SerializeObject(myDict);
 
