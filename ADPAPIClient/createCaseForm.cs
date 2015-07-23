@@ -42,21 +42,21 @@ namespace ADPAPIClient
 
 
             string jsonString = myCase.toJson();
-            byte[] jsonBytes = GetBytes(jsonString);
 
             // let's try to contact the web server
             WebClient client = new WebClient();
             client.Headers["Content-type"] = "application/json";
+            client.Headers["Accept"] = "applicaton/json";
 
             // invoke the REST method
-            byte[] data;
+            string response;
             try
             {
                 messageLabel.Text = "Contacting server .....";
-                data = client.UploadData(
+                response = client.UploadString(
                    "http://192.168.33.1:3000/api/advocates/claims.json",
-                   jsonBytes);
-                messageLabel.Text = GetString(data);
+                   jsonString);
+                messageLabel.Text = response;
 
             }
             catch (System.Exception ex)
@@ -66,7 +66,7 @@ namespace ADPAPIClient
             
         }
 
-        static byte[] GetBytes(string str)
+        /*static byte[] GetBytes(string str)
         {
             byte[] bytes = new byte[str.Length * sizeof(char)];
             System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
@@ -78,7 +78,7 @@ namespace ADPAPIClient
             char[] chars = new char[bytes.Length / sizeof(char)];
             System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
             return new string(chars);
-        }
+        } */
     }
 }
 

@@ -48,7 +48,7 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(757, 23);
+            this.titleLabel.Size = new System.Drawing.Size(779, 23);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "ADP API Client";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,7 +137,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(757, 23);
+            this.label5.Size = new System.Drawing.Size(779, 23);
             this.label5.TabIndex = 99;
             this.label5.Text = "Create Case";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,14 +146,14 @@
             // 
             this.messageLabel.Location = new System.Drawing.Point(70, 310);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(625, 36);
+            this.messageLabel.Size = new System.Drawing.Size(625, 154);
             this.messageLabel.TabIndex = 100;
             // 
             // createCaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 384);
+            this.ClientSize = new System.Drawing.Size(779, 540);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.createCaseButton);
