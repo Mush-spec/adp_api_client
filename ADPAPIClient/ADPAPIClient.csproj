@@ -59,6 +59,7 @@
     <Compile Include="createCaseForm.Designer.cs">
       <DependentUpon>createCaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HttpClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="createCaseForm.resx">

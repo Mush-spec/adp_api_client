@@ -106,6 +106,7 @@
             this.advocateEmailTextBox.Name = "advocateEmailTextBox";
             this.advocateEmailTextBox.Size = new System.Drawing.Size(263, 20);
             this.advocateEmailTextBox.TabIndex = 1;
+            this.advocateEmailTextBox.Enter += new System.EventHandler(this.advocateEmailTextBox_Enter);
             // 
             // caseNumberTextBox
             // 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net;
+
 using System.IO;
 
 
@@ -41,28 +41,14 @@ namespace ADPAPIClient
                 cmsNumberTextBox.Text);
 
 
-            string jsonString = myCase.toJson();
+            HttpClient client = new HttpClient();
+            string response = client.createClaim(myCase.toJson());
+            messageLabel.Text = response;
+        }
 
-            // let's try to contact the web server
-            WebClient client = new WebClient();
-            client.Headers["Content-type"] = "application/json";
-            client.Headers["Accept"] = "applicaton/json";
-
-            // invoke the REST method
-            string response;
-            try
-            {
-                messageLabel.Text = "Contacting server .....";
-                response = client.UploadString(
-                   "http://192.168.33.1:3000/api/advocates/claims.json",
-                   jsonString);
-                messageLabel.Text = response;
-
-            }
-            catch (System.Exception ex)
-            {
-                messageLabel.Text = ex.Message;
-            }
+        private void advocateEmailTextBox_Enter(object sender, EventArgs e)
+        {
+            messageLabel.Text = "";
         }
     }
 }
