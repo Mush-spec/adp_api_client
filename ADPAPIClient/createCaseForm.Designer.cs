@@ -56,24 +56,28 @@
             this.actualTrialLengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.applyVatCheckBox = new System.Windows.Forms.CheckBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.prosecutingAuthorityTextBox = new System.Windows.Forms.TextBox();
-            this.trialFixedDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.trialFixedNoticeDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.trialCrackedDate = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.trialCrackedDate = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.trialFixedNoticeDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.trialFixedDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.prosecutingAuthorityTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.applyVatCheckBox = new System.Windows.Forms.CheckBox();
             this.populateButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.additionalInformation = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.sentToServerLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estimatedTrialLengthNumericUpdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -82,7 +86,7 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(772, 23);
+            this.titleLabel.Size = new System.Drawing.Size(795, 23);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "ADP API Client";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,7 +162,7 @@
             // 
             // createCaseButton
             // 
-            this.createCaseButton.Location = new System.Drawing.Point(136, 431);
+            this.createCaseButton.Location = new System.Drawing.Point(136, 489);
             this.createCaseButton.Name = "createCaseButton";
             this.createCaseButton.Size = new System.Drawing.Size(75, 23);
             this.createCaseButton.TabIndex = 5;
@@ -172,25 +176,25 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(772, 23);
+            this.label5.Size = new System.Drawing.Size(795, 23);
             this.label5.TabIndex = 99;
             this.label5.Text = "Create Case";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // messageLabel
             // 
-            this.messageLabel.Location = new System.Drawing.Point(4, 16);
+            this.messageLabel.Location = new System.Drawing.Point(37, 693);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(658, 69);
+            this.messageLabel.Size = new System.Drawing.Size(658, 76);
             this.messageLabel.TabIndex = 100;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusMessage});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 635);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 798);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(772, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(795, 22);
             this.statusStrip1.TabIndex = 101;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -307,6 +311,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.additionalInformation);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label15);
@@ -322,10 +328,90 @@
             this.groupBox1.Controls.Add(this.cmsNumberTextBox);
             this.groupBox1.Location = new System.Drawing.Point(27, 265);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(691, 149);
+            this.groupBox1.Size = new System.Drawing.Size(691, 218);
             this.groupBox1.TabIndex = 115;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Optional fields";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(407, 64);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(93, 13);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Trial cracked date";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(506, 83);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(378, 89);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(122, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Trial cracked (third) date";
+            // 
+            // trialCrackedDate
+            // 
+            this.trialCrackedDate.Location = new System.Drawing.Point(506, 57);
+            this.trialCrackedDate.Name = "trialCrackedDate";
+            this.trialCrackedDate.Size = new System.Drawing.Size(134, 20);
+            this.trialCrackedDate.TabIndex = 12;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(-5, 91);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(108, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Trial fixed notice date";
+            // 
+            // trialFixedNoticeDatePicker
+            // 
+            this.trialFixedNoticeDatePicker.Location = new System.Drawing.Point(109, 85);
+            this.trialFixedNoticeDatePicker.Name = "trialFixedNoticeDatePicker";
+            this.trialFixedNoticeDatePicker.Size = new System.Drawing.Size(140, 20);
+            this.trialFixedNoticeDatePicker.TabIndex = 10;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(27, 64);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Trial fixed date";
+            // 
+            // trialFixedDatePicker
+            // 
+            this.trialFixedDatePicker.Location = new System.Drawing.Point(109, 58);
+            this.trialFixedDatePicker.Name = "trialFixedDatePicker";
+            this.trialFixedDatePicker.Size = new System.Drawing.Size(140, 20);
+            this.trialFixedDatePicker.TabIndex = 8;
+            // 
+            // prosecutingAuthorityTextBox
+            // 
+            this.prosecutingAuthorityTextBox.Location = new System.Drawing.Point(506, 25);
+            this.prosecutingAuthorityTextBox.Name = "prosecutingAuthorityTextBox";
+            this.prosecutingAuthorityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.prosecutingAuthorityTextBox.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(390, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Prosecuting authority";
             // 
             // applyVatCheckBox
             // 
@@ -337,89 +423,9 @@
             this.applyVatCheckBox.Text = "Apply VAT";
             this.applyVatCheckBox.UseVisualStyleBackColor = true;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(390, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Prosecuting authority";
-            // 
-            // prosecutingAuthorityTextBox
-            // 
-            this.prosecutingAuthorityTextBox.Location = new System.Drawing.Point(506, 25);
-            this.prosecutingAuthorityTextBox.Name = "prosecutingAuthorityTextBox";
-            this.prosecutingAuthorityTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prosecutingAuthorityTextBox.TabIndex = 7;
-            // 
-            // trialFixedDatePicker
-            // 
-            this.trialFixedDatePicker.Location = new System.Drawing.Point(109, 58);
-            this.trialFixedDatePicker.Name = "trialFixedDatePicker";
-            this.trialFixedDatePicker.Size = new System.Drawing.Size(140, 20);
-            this.trialFixedDatePicker.TabIndex = 8;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 64);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Trial fixed date";
-            // 
-            // trialFixedNoticeDatePicker
-            // 
-            this.trialFixedNoticeDatePicker.Location = new System.Drawing.Point(109, 85);
-            this.trialFixedNoticeDatePicker.Name = "trialFixedNoticeDatePicker";
-            this.trialFixedNoticeDatePicker.Size = new System.Drawing.Size(140, 20);
-            this.trialFixedNoticeDatePicker.TabIndex = 10;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(-5, 91);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 13);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Trial fixed notice date";
-            // 
-            // trialCrackedDate
-            // 
-            this.trialCrackedDate.Location = new System.Drawing.Point(506, 57);
-            this.trialCrackedDate.Name = "trialCrackedDate";
-            this.trialCrackedDate.Size = new System.Drawing.Size(134, 20);
-            this.trialCrackedDate.TabIndex = 12;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(378, 89);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(122, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Trial cracked (third) date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(506, 83);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
-            this.dateTimePicker1.TabIndex = 14;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(407, 64);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(93, 13);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Trial cracked date";
-            // 
             // populateButton
             // 
-            this.populateButton.Location = new System.Drawing.Point(514, 431);
+            this.populateButton.Location = new System.Drawing.Point(514, 489);
             this.populateButton.Name = "populateButton";
             this.populateButton.Size = new System.Drawing.Size(153, 23);
             this.populateButton.TabIndex = 116;
@@ -429,19 +435,55 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.messageLabel);
-            this.groupBox2.Location = new System.Drawing.Point(31, 488);
+            this.groupBox2.Location = new System.Drawing.Point(27, 677);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(687, 103);
+            this.groupBox2.Size = new System.Drawing.Size(691, 108);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ServerResponse";
+            // 
+            // additionalInformation
+            // 
+            this.additionalInformation.Location = new System.Drawing.Point(109, 135);
+            this.additionalInformation.Multiline = true;
+            this.additionalInformation.Name = "additionalInformation";
+            this.additionalInformation.Size = new System.Drawing.Size(531, 77);
+            this.additionalInformation.TabIndex = 16;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(27, 138);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Additional Info";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.sentToServerLabel);
+            this.groupBox3.Location = new System.Drawing.Point(27, 518);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(691, 153);
+            this.groupBox3.TabIndex = 118;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Sent to Server";
+            // 
+            // sentToServerLabel
+            // 
+            this.sentToServerLabel.Location = new System.Drawing.Point(8, 16);
+            this.sentToServerLabel.Name = "sentToServerLabel";
+            this.sentToServerLabel.Size = new System.Drawing.Size(632, 120);
+            this.sentToServerLabel.TabIndex = 0;
+            this.sentToServerLabel.Text = "label18";
             // 
             // createCaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 657);
+            this.ClientSize = new System.Drawing.Size(795, 820);
+            this.Controls.Add(this.messageLabel);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.populateButton);
             this.Controls.Add(this.groupBox1);
@@ -476,7 +518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +567,10 @@
         private System.Windows.Forms.DateTimePicker trialFixedDatePicker;
         private System.Windows.Forms.Button populateButton;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox additionalInformation;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label sentToServerLabel;
     }
 }
 

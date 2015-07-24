@@ -16,7 +16,10 @@ namespace ADPAPIClient
         private string port;
         private string baseUrl;
         private string response;
-            
+
+        public string fullUrl;
+        public HttpStatusCode responseStatusCode;
+
         public HttpClient()
         {
             this.protocol = "http";
@@ -28,11 +31,12 @@ namespace ADPAPIClient
 
         public string createClaim(string jsonPayload)
         {
-            string url = makeUrl("claims.json");
+            fullUrl = getUrl("claims.json");
             WebClient client = instantiateClient();
             try
             {
-                response = client.UploadString(url, jsonPayload);
+                response = client.UploadString(fullUrl, jsonPayload);
+                responseStatusCode = HttpStatusCode.OK;
             }
             catch (WebException ex)
             {
@@ -49,6 +53,7 @@ namespace ADPAPIClient
                 HttpWebResponse httpResponse = (HttpWebResponse)response;
                 if (httpResponse != null)
                 {
+                    responseStatusCode = httpResponse.StatusCode;
                     if (httpResponse.StatusCode == HttpStatusCode.BadRequest)
                     {
                         using (Stream data = response.GetResponseStream())
@@ -76,7 +81,7 @@ namespace ADPAPIClient
         }
 
 
-        private string makeUrl(string endpoint)
+        public string getUrl(string endpoint)
         {
             return protocol + "://" + host + ":" + port + "/" + baseUrl + "/" + endpoint;
         }
