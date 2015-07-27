@@ -56,6 +56,8 @@
             this.actualTrialLengthNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.additionalInformation = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.applyVatCheckBox = new System.Windows.Forms.CheckBox();
             this.populateButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.additionalInformation = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.sentToServerLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
@@ -86,7 +86,7 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(795, 23);
+            this.titleLabel.Size = new System.Drawing.Size(823, 23);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "ADP API Client";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,25 +176,26 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(795, 23);
+            this.label5.Size = new System.Drawing.Size(823, 23);
             this.label5.TabIndex = 99;
             this.label5.Text = "Create Case";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // messageLabel
             // 
+            this.messageLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.messageLabel.Location = new System.Drawing.Point(37, 693);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(658, 76);
+            this.messageLabel.Size = new System.Drawing.Size(658, 119);
             this.messageLabel.TabIndex = 100;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusMessage});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 798);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 843);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(795, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(823, 22);
             this.statusStrip1.TabIndex = 101;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -333,6 +334,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Optional fields";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(27, 138);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 13);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Additional Info";
+            // 
+            // additionalInformation
+            // 
+            this.additionalInformation.Location = new System.Drawing.Point(109, 135);
+            this.additionalInformation.Multiline = true;
+            this.additionalInformation.Name = "additionalInformation";
+            this.additionalInformation.Size = new System.Drawing.Size(531, 77);
+            this.additionalInformation.TabIndex = 16;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -437,27 +455,10 @@
             // 
             this.groupBox2.Location = new System.Drawing.Point(27, 677);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(691, 108);
+            this.groupBox2.Size = new System.Drawing.Size(691, 148);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ServerResponse";
-            // 
-            // additionalInformation
-            // 
-            this.additionalInformation.Location = new System.Drawing.Point(109, 135);
-            this.additionalInformation.Multiline = true;
-            this.additionalInformation.Name = "additionalInformation";
-            this.additionalInformation.Size = new System.Drawing.Size(531, 77);
-            this.additionalInformation.TabIndex = 16;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(27, 138);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 13);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Additional Info";
             // 
             // groupBox3
             // 
@@ -471,6 +472,7 @@
             // 
             // sentToServerLabel
             // 
+            this.sentToServerLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentToServerLabel.Location = new System.Drawing.Point(8, 16);
             this.sentToServerLabel.Name = "sentToServerLabel";
             this.sentToServerLabel.Size = new System.Drawing.Size(632, 120);
@@ -481,7 +483,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 820);
+            this.ClientSize = new System.Drawing.Size(823, 865);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -511,7 +513,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.titleLabel);
             this.Name = "createCaseForm";
-            this.Text = "Form1";
+            this.Text = "ADP Client";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estimatedTrialLengthNumericUpdown)).EndInit();
