@@ -9,12 +9,13 @@ namespace ADPAPIClient
     class NamedEntity
     {
         public int Id { get; set; }
+        public String Value { get; set; }
         public string Description { get; set; }
 
-
-        public NamedEntity(int id, string description)
+        public NamedEntity(int id,String value, string description)
         {
             this.Id = id;
+            this.Value = value;
             this.Description = description;
         }
     }

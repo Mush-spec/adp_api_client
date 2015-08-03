@@ -11,7 +11,7 @@ namespace ADPAPIClient
     {
         public string advocateEmail { private get; set; }
         public string caseNumber { private get; set; }
-        public string caseTypeId { private get; set; }
+        public string caseType { private get; set; }
         public string cmsNumber { private get; set; }
         public string indictmentNumber { private get; set; }
         public string advocateCategory { private get; set; }
@@ -45,7 +45,7 @@ namespace ADPAPIClient
             // mandatory fields
             myDict.Add("advocate_email", this.advocateEmail);
             myDict.Add("case_number", this.caseNumber);
-            myDict.Add("case_type", this.caseTypeId);
+            myDict.Add("case_type", this.caseType);
             myDict.Add("indictment_number", this.indictmentNumber);
             myDict.Add("first_day_of_trial", convertDate(this.trialStartDate));
             myDict.Add("estimated_trial_length", Convert.ToString(this.estimatedTrialLength));

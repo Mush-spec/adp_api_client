@@ -39,7 +39,6 @@
             this.cmsNumberTextBox = new System.Windows.Forms.TextBox();
             this.createCaseButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.messageLabel = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.responseLabel = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.sentToServerLabel = new System.Windows.Forms.Label();
+            this.messageLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estimatedTrialLengthNumericUpdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).BeginInit();
@@ -94,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 94);
+            this.label1.Location = new System.Drawing.Point(24, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 1;
@@ -103,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 127);
+            this.label2.Location = new System.Drawing.Point(35, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 2;
@@ -112,7 +112,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(473, 132);
+            this.label3.Location = new System.Drawing.Point(473, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 3;
@@ -133,14 +133,14 @@
             this.caseTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.caseTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.caseTypeComboBox.FormattingEnabled = true;
-            this.caseTypeComboBox.Location = new System.Drawing.Point(533, 124);
+            this.caseTypeComboBox.Location = new System.Drawing.Point(533, 82);
             this.caseTypeComboBox.Name = "caseTypeComboBox";
             this.caseTypeComboBox.Size = new System.Drawing.Size(162, 21);
             this.caseTypeComboBox.TabIndex = 3;
             // 
             // advocateEmailTextBox
             // 
-            this.advocateEmailTextBox.Location = new System.Drawing.Point(110, 91);
+            this.advocateEmailTextBox.Location = new System.Drawing.Point(110, 49);
             this.advocateEmailTextBox.Name = "advocateEmailTextBox";
             this.advocateEmailTextBox.Size = new System.Drawing.Size(226, 20);
             this.advocateEmailTextBox.TabIndex = 1;
@@ -148,7 +148,7 @@
             // 
             // caseNumberTextBox
             // 
-            this.caseNumberTextBox.Location = new System.Drawing.Point(110, 121);
+            this.caseNumberTextBox.Location = new System.Drawing.Point(110, 79);
             this.caseNumberTextBox.Name = "caseNumberTextBox";
             this.caseNumberTextBox.Size = new System.Drawing.Size(166, 20);
             this.caseNumberTextBox.TabIndex = 2;
@@ -162,7 +162,7 @@
             // 
             // createCaseButton
             // 
-            this.createCaseButton.Location = new System.Drawing.Point(136, 489);
+            this.createCaseButton.Location = new System.Drawing.Point(136, 439);
             this.createCaseButton.Name = "createCaseButton";
             this.createCaseButton.Size = new System.Drawing.Size(75, 23);
             this.createCaseButton.TabIndex = 5;
@@ -181,19 +181,11 @@
             this.label5.Text = "Create Case";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // messageLabel
-            // 
-            this.messageLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageLabel.Location = new System.Drawing.Point(37, 693);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(658, 119);
-            this.messageLabel.TabIndex = 100;
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusMessage});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 843);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 720);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(823, 22);
             this.statusStrip1.TabIndex = 101;
@@ -208,7 +200,7 @@
             // responseLabel
             // 
             this.responseLabel.AutoSize = true;
-            this.responseLabel.Location = new System.Drawing.Point(70, 286);
+            this.responseLabel.Location = new System.Drawing.Point(70, 236);
             this.responseLabel.Name = "responseLabel";
             this.responseLabel.Size = new System.Drawing.Size(0, 13);
             this.responseLabel.TabIndex = 102;
@@ -216,7 +208,7 @@
             // advocateCategoryComboBox
             // 
             this.advocateCategoryComboBox.FormattingEnabled = true;
-            this.advocateCategoryComboBox.Location = new System.Drawing.Point(533, 90);
+            this.advocateCategoryComboBox.Location = new System.Drawing.Point(533, 48);
             this.advocateCategoryComboBox.Name = "advocateCategoryComboBox";
             this.advocateCategoryComboBox.Size = new System.Drawing.Size(162, 21);
             this.advocateCategoryComboBox.TabIndex = 103;
@@ -224,7 +216,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(429, 94);
+            this.label6.Location = new System.Drawing.Point(429, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 104;
@@ -233,7 +225,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 155);
+            this.label7.Location = new System.Drawing.Point(28, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 105;
@@ -241,14 +233,14 @@
             // 
             // indictmentNumberTextBox
             // 
-            this.indictmentNumberTextBox.Location = new System.Drawing.Point(110, 152);
+            this.indictmentNumberTextBox.Location = new System.Drawing.Point(110, 110);
             this.indictmentNumberTextBox.Name = "indictmentNumberTextBox";
             this.indictmentNumberTextBox.Size = new System.Drawing.Size(166, 20);
             this.indictmentNumberTextBox.TabIndex = 106;
             // 
             // trialStartDatePicker
             // 
-            this.trialStartDatePicker.Location = new System.Drawing.Point(110, 188);
+            this.trialStartDatePicker.Location = new System.Drawing.Point(110, 145);
             this.trialStartDatePicker.Name = "trialStartDatePicker";
             this.trialStartDatePicker.Size = new System.Drawing.Size(166, 20);
             this.trialStartDatePicker.TabIndex = 107;
@@ -256,7 +248,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 194);
+            this.label8.Location = new System.Drawing.Point(30, 152);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 13);
             this.label8.TabIndex = 108;
@@ -264,7 +256,7 @@
             // 
             // estimatedTrialLengthNumericUpdown
             // 
-            this.estimatedTrialLengthNumericUpdown.Location = new System.Drawing.Point(533, 183);
+            this.estimatedTrialLengthNumericUpdown.Location = new System.Drawing.Point(533, 145);
             this.estimatedTrialLengthNumericUpdown.Name = "estimatedTrialLengthNumericUpdown";
             this.estimatedTrialLengthNumericUpdown.Size = new System.Drawing.Size(84, 20);
             this.estimatedTrialLengthNumericUpdown.TabIndex = 109;
@@ -272,7 +264,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(423, 185);
+            this.label9.Location = new System.Drawing.Point(423, 152);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(104, 13);
             this.label9.TabIndex = 110;
@@ -280,7 +272,7 @@
             // 
             // trialEndDatePicker
             // 
-            this.trialEndDatePicker.Location = new System.Drawing.Point(110, 227);
+            this.trialEndDatePicker.Location = new System.Drawing.Point(110, 171);
             this.trialEndDatePicker.Name = "trialEndDatePicker";
             this.trialEndDatePicker.Size = new System.Drawing.Size(166, 20);
             this.trialEndDatePicker.TabIndex = 111;
@@ -288,7 +280,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(32, 233);
+            this.label10.Location = new System.Drawing.Point(32, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 13);
             this.label10.TabIndex = 112;
@@ -296,7 +288,7 @@
             // 
             // actualTrialLengthNumericUpDown
             // 
-            this.actualTrialLengthNumericUpDown.Location = new System.Drawing.Point(533, 227);
+            this.actualTrialLengthNumericUpDown.Location = new System.Drawing.Point(533, 171);
             this.actualTrialLengthNumericUpDown.Name = "actualTrialLengthNumericUpDown";
             this.actualTrialLengthNumericUpDown.Size = new System.Drawing.Size(84, 20);
             this.actualTrialLengthNumericUpDown.TabIndex = 113;
@@ -304,7 +296,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(439, 229);
+            this.label11.Location = new System.Drawing.Point(439, 173);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 13);
             this.label11.TabIndex = 114;
@@ -327,7 +319,7 @@
             this.groupBox1.Controls.Add(this.applyVatCheckBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmsNumberTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(27, 265);
+            this.groupBox1.Location = new System.Drawing.Point(27, 215);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(691, 218);
             this.groupBox1.TabIndex = 115;
@@ -443,7 +435,7 @@
             // 
             // populateButton
             // 
-            this.populateButton.Location = new System.Drawing.Point(514, 489);
+            this.populateButton.Location = new System.Drawing.Point(514, 439);
             this.populateButton.Name = "populateButton";
             this.populateButton.Size = new System.Drawing.Size(153, 23);
             this.populateButton.TabIndex = 116;
@@ -453,37 +445,56 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(27, 677);
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox2.Location = new System.Drawing.Point(25, 595);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(691, 148);
+            this.groupBox2.Size = new System.Drawing.Size(700, 110);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ServerResponse";
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox3.Controls.Add(this.sentToServerLabel);
-            this.groupBox3.Location = new System.Drawing.Point(27, 518);
+            this.groupBox3.Location = new System.Drawing.Point(27, 468);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(691, 153);
+            this.groupBox3.Size = new System.Drawing.Size(700, 121);
             this.groupBox3.TabIndex = 118;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sent to Server";
             // 
             // sentToServerLabel
             // 
+            this.sentToServerLabel.AutoSize = true;
+            this.sentToServerLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sentToServerLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sentToServerLabel.ForeColor = System.Drawing.SystemColors.Info;
             this.sentToServerLabel.Location = new System.Drawing.Point(8, 16);
+            this.sentToServerLabel.MaximumSize = new System.Drawing.Size(680, 0);
+            this.sentToServerLabel.MinimumSize = new System.Drawing.Size(680, 100);
             this.sentToServerLabel.Name = "sentToServerLabel";
-            this.sentToServerLabel.Size = new System.Drawing.Size(632, 120);
+            this.sentToServerLabel.Size = new System.Drawing.Size(680, 100);
             this.sentToServerLabel.TabIndex = 0;
             this.sentToServerLabel.Text = "label18";
+            this.sentToServerLabel.Click += new System.EventHandler(this.sentToServerLabel_Click);
+            // 
+            // messageLabel
+            // 
+            this.messageLabel.AutoSize = true;
+            this.messageLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageLabel.Location = new System.Drawing.Point(37, 616);
+            this.messageLabel.MaximumSize = new System.Drawing.Size(680, 0);
+            this.messageLabel.MinimumSize = new System.Drawing.Size(680, 60);
+            this.messageLabel.Name = "messageLabel";
+            this.messageLabel.Size = new System.Drawing.Size(680, 60);
+            this.messageLabel.TabIndex = 100;
             // 
             // createCaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 865);
+            this.ClientSize = new System.Drawing.Size(823, 742);
             this.Controls.Add(this.messageLabel);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -521,6 +532,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,7 +551,6 @@
         private System.Windows.Forms.TextBox cmsNumberTextBox;
         private System.Windows.Forms.Button createCaseButton;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label messageLabel;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusMessage;
         private System.Windows.Forms.Label responseLabel;
@@ -573,6 +584,7 @@
         private System.Windows.Forms.TextBox additionalInformation;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label sentToServerLabel;
+        private System.Windows.Forms.Label messageLabel;
     }
 }
 

@@ -36,7 +36,7 @@ namespace ADPAPIClient
         {
             caseTypeComboBox.DataSource = apiConstants.caseTypes;
             caseTypeComboBox.DisplayMember = "Description";
-            caseTypeComboBox.ValueMember = "Id";
+            caseTypeComboBox.ValueMember = "Value";
         }
 
         private void initializeAdvocateCategoryComboBox()
@@ -72,7 +72,8 @@ namespace ADPAPIClient
             Case myCase = new Case();
             myCase.advocateEmail = advocateEmailTextBox.Text;
             myCase.caseNumber = caseNumberTextBox.Text;
-            myCase.caseTypeId = caseTypeComboBox.Text;
+            myCase.caseType = caseTypeComboBox.SelectedValue.ToString();
+            myCase.prosecutingAuthority = prosecutingAuthorityTextBox.Text;
             myCase.indictmentNumber = indictmentNumberTextBox.Text;
             myCase.trialStartDate = trialStartDatePicker.Value;
             myCase.estimatedTrialLength = estimatedTrialLengthNumericUpdown.Value;
@@ -94,20 +95,24 @@ namespace ADPAPIClient
         {
             advocateEmailTextBox.Text = "advocate@example.com";
             caseNumberTextBox.Text = "CASE0001";
-            caseTypeComboBox.Text = "Trial";
+            caseTypeComboBox.Text = "Retrial";
             indictmentNumberTextBox.Text = "IND-3553";
             trialStartDatePicker.Value = new DateTime(2015, 5, 17);
             estimatedTrialLengthNumericUpdown.Value = 3;
             actualTrialLengthNumericUpDown.Value = 3;
             trialEndDatePicker.Value = new DateTime(2015, 5, 19);
+            prosecutingAuthorityTextBox.Text = "cps";
             advocateCategoryComboBox.Text = "QC";
-            cmsNumberTextBox.Text = "CMS-001";
+            cmsNumberTextBox.Text = "CMS-2015-0001";
             additionalInformation.Text = "This is a test Case sent from a sample API client program running on .NET.";
             applyVatCheckBox.Checked = true;
 
         }
 
-       
+        private void sentToServerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
