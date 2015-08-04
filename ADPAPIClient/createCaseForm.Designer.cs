@@ -73,10 +73,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.sentToServerLabel = new System.Windows.Forms.Label();
             this.messageLabel = new System.Windows.Forms.Label();
+            this.courtComboBox = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estimatedTrialLengthNumericUpdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +89,7 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(823, 23);
+            this.titleLabel.Size = new System.Drawing.Size(818, 23);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "ADP API Client";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,7 +115,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(473, 90);
+            this.label3.Location = new System.Drawing.Point(459, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 3;
@@ -133,14 +136,15 @@
             this.caseTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.caseTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.caseTypeComboBox.FormattingEnabled = true;
-            this.caseTypeComboBox.Location = new System.Drawing.Point(533, 82);
+            this.caseTypeComboBox.Location = new System.Drawing.Point(533, 77);
             this.caseTypeComboBox.Name = "caseTypeComboBox";
             this.caseTypeComboBox.Size = new System.Drawing.Size(162, 21);
             this.caseTypeComboBox.TabIndex = 3;
+            this.caseTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.caseTypeComboBox_SelectedIndexChanged);
             // 
             // advocateEmailTextBox
             // 
-            this.advocateEmailTextBox.Location = new System.Drawing.Point(110, 49);
+            this.advocateEmailTextBox.Location = new System.Drawing.Point(110, 48);
             this.advocateEmailTextBox.Name = "advocateEmailTextBox";
             this.advocateEmailTextBox.Size = new System.Drawing.Size(226, 20);
             this.advocateEmailTextBox.TabIndex = 1;
@@ -148,7 +152,7 @@
             // 
             // caseNumberTextBox
             // 
-            this.caseNumberTextBox.Location = new System.Drawing.Point(110, 79);
+            this.caseNumberTextBox.Location = new System.Drawing.Point(110, 78);
             this.caseNumberTextBox.Name = "caseNumberTextBox";
             this.caseNumberTextBox.Size = new System.Drawing.Size(166, 20);
             this.caseNumberTextBox.TabIndex = 2;
@@ -176,7 +180,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(823, 23);
+            this.label5.Size = new System.Drawing.Size(818, 23);
             this.label5.TabIndex = 99;
             this.label5.Text = "Create Case";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,9 +189,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusMessage});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 720);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 845);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(823, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(818, 22);
             this.statusStrip1.TabIndex = 101;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -216,7 +220,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(429, 52);
+            this.label6.Location = new System.Drawing.Point(415, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 104;
@@ -446,9 +450,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Location = new System.Drawing.Point(25, 595);
+            this.groupBox2.Controls.Add(this.messageLabel);
+            this.groupBox2.Location = new System.Drawing.Point(25, 653);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(700, 110);
+            this.groupBox2.Size = new System.Drawing.Size(700, 174);
             this.groupBox2.TabIndex = 117;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ServerResponse";
@@ -459,7 +464,7 @@
             this.groupBox3.Controls.Add(this.sentToServerLabel);
             this.groupBox3.Location = new System.Drawing.Point(27, 468);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(700, 121);
+            this.groupBox3.Size = new System.Drawing.Size(700, 174);
             this.groupBox3.TabIndex = 118;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Sent to Server";
@@ -472,30 +477,49 @@
             this.sentToServerLabel.ForeColor = System.Drawing.SystemColors.Info;
             this.sentToServerLabel.Location = new System.Drawing.Point(8, 16);
             this.sentToServerLabel.MaximumSize = new System.Drawing.Size(680, 0);
-            this.sentToServerLabel.MinimumSize = new System.Drawing.Size(680, 100);
+            this.sentToServerLabel.MinimumSize = new System.Drawing.Size(680, 150);
             this.sentToServerLabel.Name = "sentToServerLabel";
-            this.sentToServerLabel.Size = new System.Drawing.Size(680, 100);
+            this.sentToServerLabel.Size = new System.Drawing.Size(680, 150);
             this.sentToServerLabel.TabIndex = 0;
-            this.sentToServerLabel.Text = "label18";
             this.sentToServerLabel.Click += new System.EventHandler(this.sentToServerLabel_Click);
             // 
             // messageLabel
             // 
             this.messageLabel.AutoSize = true;
+            this.messageLabel.BackColor = System.Drawing.SystemColors.Info;
             this.messageLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageLabel.Location = new System.Drawing.Point(37, 616);
+            this.messageLabel.Location = new System.Drawing.Point(7, 18);
             this.messageLabel.MaximumSize = new System.Drawing.Size(680, 0);
-            this.messageLabel.MinimumSize = new System.Drawing.Size(680, 60);
+            this.messageLabel.MinimumSize = new System.Drawing.Size(680, 140);
             this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(680, 60);
+            this.messageLabel.Size = new System.Drawing.Size(680, 140);
             this.messageLabel.TabIndex = 100;
+            // 
+            // courtComboBox
+            // 
+            this.courtComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.courtComboBox.FormattingEnabled = true;
+            this.courtComboBox.Location = new System.Drawing.Point(533, 110);
+            this.courtComboBox.Name = "courtComboBox";
+            this.courtComboBox.Size = new System.Drawing.Size(162, 21);
+            this.courtComboBox.TabIndex = 119;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(481, 113);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(32, 13);
+            this.label18.TabIndex = 120;
+            this.label18.Text = "Court";
             // 
             // createCaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 742);
-            this.Controls.Add(this.messageLabel);
+            this.ClientSize = new System.Drawing.Size(818, 867);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.courtComboBox);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.populateButton);
@@ -531,6 +555,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -585,6 +611,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label sentToServerLabel;
         private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.ComboBox courtComboBox;
+        private System.Windows.Forms.Label label18;
     }
 }
 

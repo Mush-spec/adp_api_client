@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="APIConstants.cs" />
     <Compile Include="Case.cs" />
+    <Compile Include="Court.cs" />
     <Compile Include="NamedEntity.cs" />
     <Compile Include="createCaseForm.cs">
       <SubType>Form</SubType>

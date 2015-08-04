@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Windows.Forms;
 
 namespace ADPAPIClient
 {
@@ -12,6 +14,8 @@ namespace ADPAPIClient
         public string advocateEmail { private get; set; }
         public string caseNumber { private get; set; }
         public string caseType { private get; set; }
+        public string courtId { private get; set; }
+        public string offenceId { private get; set; }
         public string cmsNumber { private get; set; }
         public string indictmentNumber { private get; set; }
         public string advocateCategory { private get; set; }
@@ -20,7 +24,7 @@ namespace ADPAPIClient
 
         public decimal estimatedTrialLength { private get; set; }
         public decimal actualTrialLength { private get; set; }
-        
+
         public bool applyVat { private get; set; }
 
         public DateTime trialStartDate { private get; set; }
@@ -30,14 +34,11 @@ namespace ADPAPIClient
         public DateTime trialCrackedDate { private get; set; }
         public DateTime trialCrackedAtThirdDate { private get; set; }
 
-
-
-    public Case()
+        public Case()
         {
             // Console.WriteLine("Case instantiated");
         }
 
-        
         public string toJson()
         {
             Dictionary<string, string> myDict = new Dictionary<string, string>();
@@ -46,6 +47,9 @@ namespace ADPAPIClient
             myDict.Add("advocate_email", this.advocateEmail);
             myDict.Add("case_number", this.caseNumber);
             myDict.Add("case_type", this.caseType);
+            myDict.Add("court_id", this.courtId);
+            myDict.Add("offence_id", "36");
+
             myDict.Add("indictment_number", this.indictmentNumber);
             myDict.Add("first_day_of_trial", convertDate(this.trialStartDate));
             myDict.Add("estimated_trial_length", Convert.ToString(this.estimatedTrialLength));
@@ -61,9 +65,10 @@ namespace ADPAPIClient
             myDict.Add("trial_fixed_notice_at", convertDate(this.trialFixedNoticeDate));
             myDict.Add("trial_fixed_at", convertDate(this.trialFixedDate));
             myDict.Add("trial_cracked_at", convertDate(this.trialCrackedDate));
-            myDict.Add("trial_cracked_at_third", convertDate(this.trialCrackedAtThirdDate));
+            myDict.Add("additional_information", this.additionalInformation);
 
-            return JsonConvert.SerializeObject(myDict);
+            //don't think the IsoDateTimeConverter has any impact here
+            return JsonConvert.SerializeObject(myDict, new IsoDateTimeConverter());
         }
 
 
@@ -72,10 +77,11 @@ namespace ADPAPIClient
             string result = "";
             if (date != new DateTime())
             {
-                result = Convert.ToString(date);
+                //see MSDN Round-trip ("o") format specified
+                result = date.ToString("o");
             }
             return result;
         }
-       
+
     }
 }
