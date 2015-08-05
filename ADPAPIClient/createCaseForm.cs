@@ -31,6 +31,7 @@ namespace ADPAPIClient
             initializeCaseTypeComboBox();
             initializeAdvocateCategoryComboBox();
             initializeCourtCombobox();
+            initializeTrialCrackedAtThirdComboBox();
             statusMessage.Text = fillFormStatusMessage;
             sentToServerLabel.Text = "";
         }
@@ -52,15 +53,16 @@ namespace ADPAPIClient
 
         private void initializeCourtCombobox()
         {
-
             courtComboBox.DataSource = apiConstants.courts;
             courtComboBox.DisplayMember = "Name";
             courtComboBox.ValueMember = "Id";
-            //foreach (Court court in apiConstants.courts)
-            //{dump += court.Id.ToString() + "," + court.Code + "," + court.Name + "," + court.Courtype + "\n";}
-            //MessageBox.Show(dump, "dump of parse courts json as court object", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
-
+        private void initializeTrialCrackedAtThirdComboBox()
+        {
+            trialCrackAtThirdComboBox.DataSource = apiConstants.trialCrackedAtThirds;
+            trialCrackAtThirdComboBox.DisplayMember = "Description";
+            trialCrackAtThirdComboBox.ValueMember = "Value";
         }
 
         private void createCaseButton_Click(object sender, EventArgs e)
@@ -99,6 +101,13 @@ namespace ADPAPIClient
             myCase.endTrialDate = trialEndDatePicker.Value;
             myCase.advocateCategory = advocateCategoryComboBox.Text;
             myCase.cmsNumber = cmsNumberTextBox.Text;
+
+            if (trialFixedDatePicker.Checked) myCase.trialFixedAt = trialFixedDatePicker.Value;
+            if (trialFixedNoticeDatePicker.Checked) myCase.trialFixedNoticeAt = trialFixedNoticeDatePicker.Value;
+            if (trialCrackedDatePicker.Checked) myCase.trialCrackedAt = trialCrackedDatePicker.Value;
+            myCase.trialCrackedAtThird = trialCrackAtThirdComboBox.SelectedValue.ToString();
+
+            myCase.applyVat = applyVatCheckBox.Checked;
             myCase.additionalInformation = additionalInformation.Text;
             return myCase;
         }
@@ -125,7 +134,6 @@ namespace ADPAPIClient
             cmsNumberTextBox.Text = "CMS-2015-0001";
             additionalInformation.Text = "This is a test Case sent from a sample API client program running on .NET.";
             applyVatCheckBox.Checked = true;
-
         }
 
         private void sentToServerLabel_Click(object sender, EventArgs e)
@@ -143,6 +151,16 @@ namespace ADPAPIClient
         }
 
         private void caseTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trialFixedDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            //example of retireiving lookup data from API endpoint
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }

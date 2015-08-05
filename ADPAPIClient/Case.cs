@@ -29,10 +29,10 @@ namespace ADPAPIClient
 
         public DateTime trialStartDate { private get; set; }
         public DateTime endTrialDate { private get; set; }
-        public DateTime trialFixedNoticeDate { private get; set; }
-        public DateTime trialFixedDate { private get; set; }
-        public DateTime trialCrackedDate { private get; set; }
-        public DateTime trialCrackedAtThirdDate { private get; set; }
+        public DateTime trialFixedNoticeAt { private get; set; }
+        public DateTime trialFixedAt { private get; set; }
+        public DateTime trialCrackedAt { private get; set; }
+        public string trialCrackedAtThird { private get; set; }
 
         public Case()
         {
@@ -49,6 +49,7 @@ namespace ADPAPIClient
             myDict.Add("case_type", this.caseType);
             myDict.Add("court_id", this.courtId);
             myDict.Add("offence_id", "36");
+            myDict.Add("prosecuting_authority", this.prosecutingAuthority);
 
             myDict.Add("indictment_number", this.indictmentNumber);
             myDict.Add("first_day_of_trial", convertDate(this.trialStartDate));
@@ -58,19 +59,19 @@ namespace ADPAPIClient
             myDict.Add("advocate_category", this.advocateCategory);
 
             // optional fields
-            myDict.Add("cms_number", this.cmsNumber);
-            myDict.Add("additional information", this.additionalInformation);
-            myDict.Add("apply_vat", Convert.ToString(this.applyVat));
-            myDict.Add("prosecuting_authority", this.prosecutingAuthority);
-            myDict.Add("trial_fixed_notice_at", convertDate(this.trialFixedNoticeDate));
-            myDict.Add("trial_fixed_at", convertDate(this.trialFixedDate));
-            myDict.Add("trial_cracked_at", convertDate(this.trialCrackedDate));
-            myDict.Add("additional_information", this.additionalInformation);
+            // - only send them if they have a value
+            if (!String.IsNullOrEmpty(this.cmsNumber))              myDict.Add("cms_number", this.cmsNumber);
+            if (!String.IsNullOrEmpty(this.additionalInformation))  myDict.Add("additional_information", this.additionalInformation);
+            if (!String.IsNullOrEmpty(this.applyVat.ToString()))    myDict.Add("apply_vat", Convert.ToString(this.applyVat));
+           
+            if (this.trialFixedNoticeAt != new DateTime())          myDict.Add("trial_fixed_notice_at", convertDate(this.trialFixedNoticeAt));
+            if (this.trialFixedAt != new DateTime())                myDict.Add("trial_fixed_at", convertDate(this.trialFixedAt));
+            if(this.trialCrackedAt != new DateTime())               myDict.Add("trial_cracked_at", convertDate(this.trialCrackedAt));
+            if (!String.IsNullOrEmpty(this.trialCrackedAtThird))    myDict.Add("trial_cracked_at_third", this.trialCrackedAtThird);
 
             //don't think the IsoDateTimeConverter has any impact here
             return JsonConvert.SerializeObject(myDict, new IsoDateTimeConverter());
         }
-
 
         private string convertDate(DateTime date)
         {
