@@ -18,5 +18,6 @@ namespace ADPAPIClient
             this.Value = value;
             this.Description = description;
         }
+
     }
 }

@@ -25,17 +25,32 @@ namespace ADPAPIClient
             this.protocol = "http";
             this.host = "192.168.33.1";
             this.port = "3000";
-            this.baseUrl = "api/advocates";
+            this.baseUrl = "api";
         }
-
 
         public string createClaim(string jsonPayload)
         {
-            fullUrl = getUrl("claims.json");
+            fullUrl = getUrl("advocates/claims.json");
             WebClient client = instantiateClient();
             try
             {
                 response = client.UploadString(fullUrl, jsonPayload);
+                responseStatusCode = HttpStatusCode.OK;
+            }
+            catch (WebException ex)
+            {
+                response = extractErrorDetails(ex);
+            }
+            return response;
+        }
+
+        public string getCourts()
+        {
+            fullUrl = getUrl("courts");
+            WebClient client = instantiateClient();
+            try
+            {
+                response = client.DownloadString(fullUrl);
                 responseStatusCode = HttpStatusCode.OK;
             }
             catch (WebException ex)

@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
+//using ADPAPIClient;
 
 // case_types:
 //   - appeal_against_conviction
@@ -43,50 +47,33 @@ using System.Threading.Tasks;
 
 namespace ADPAPIClient
 {
-    //class DB
-    //{
-    //    private static readonly DB instance = new DB();
-    //    public static DB Instance { get { return instance; } }
-
-    //    static DB() { }
-    //    private DB()
-    //    {
-    //        StaticData = new System.Data.DataSet();
-    //    }
-
-    //    private static System.Data.DataSet StaticData;
-
-    //    public System.Data.DataTable GetCaseTypeTable()
-    //    {
-    //        // check if the table has been created
-    //        if (StaticData.Tables["case_types"] == null)
-    //        {
-    //            // build table (or retrieve from database)
-    //            System.Data.DataTable table = new System.Data.DataTable();
-    //            table.TableName = "case_types";
-    //            table.Columns.Add("id", typeof(int));
-    //            table.Columns.Add("value", typeof(string));
-    //            table.Columns.Add("description", typeof(string));
-
-    //            table.Rows.Add(1, "appeal_against_conviction", "Appeal against conviction");
-    //            table.Rows.Add(1, "appeal_against_sentence", "Appeal against sentence");
-    //            table.Rows.Add(1, "breach_of_crown_court_order", "Breach of crown court order");
-
-    //            StaticData.Tables.Add(table.Copy());
-
-    //        }
-    //        return StaticData.Tables["case_types"];
-    //    }
-    //}
-
     class APIConstants
     {
+        public IList<Court> courts = new List<Court>();
+
+        public APIConstants()
+        {
+            HttpClient client = new HttpClient();
+            string json = client.getCourts();
+            //MessageBox.Show("Response: " + client.responseStatusCode + "\n" + json, "Response form courts endpoint", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            JArray courtArray = JArray.Parse(json);
+            IList<JToken> tokens = courtArray.Children().ToList();
+
+            foreach (JToken token in tokens)
+            {
+                Court court = JsonConvert.DeserializeObject<Court>(token.ToString());
+                courts.Add(court);
+            }
+
+        }
+
         public NamedEntity[] caseTypes = new NamedEntity[]
         {
             new NamedEntity(0,"", "--- Select case type ---"),
             new NamedEntity(1,"appeal_against_conviction", "Appeal against conviction"),
             new NamedEntity(2,"appeal_against_sentence", "Appeal against sentence"),
-            new NamedEntity(3,",breach_pf_crown_court_order", "Breach of Crown Court order"),
+            new NamedEntity(3,",breach_of_crown_court_order", "Breach of Crown Court order"),
             new NamedEntity(4,"commital_for_sentence", "Commital for Sentence"),
             new NamedEntity(5,"contempt", "Contempt"),
             new NamedEntity(6,"cracked_trial", "Cracked trial"),
@@ -100,8 +87,7 @@ namespace ADPAPIClient
 
         };
 
-
-    public NamedEntity[] advocateCategories = new NamedEntity[]
+        public NamedEntity[] advocateCategories = new NamedEntity[]
         {
             new NamedEntity(0,"", "--- Select advocate category ---"),
             new NamedEntity(1,"QC","QC"),
@@ -109,5 +95,18 @@ namespace ADPAPIClient
             new NamedEntity(3,"Leading junior","Leading junior"),
             new NamedEntity(4,"Junior alone","Junior alone")
         };
-     }
+
+        //not required
+        public NamedEntity[] trialCrackedAtThirdTypes = new NamedEntity[]
+        {
+            new NamedEntity(0,"", "--- Select cracked third category ---"),
+            new NamedEntity(1,"first_third","First Third"),
+            new NamedEntity(2,"second_third","Second Third"),
+            new NamedEntity(3,"final_third","Final Third"),
+        };
+
+    }
+
+   
+
 }

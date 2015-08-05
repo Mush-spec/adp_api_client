@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 using System.IO;
+using System.Net;
 
 
 
@@ -21,12 +23,14 @@ namespace ADPAPIClient
         private string displayResponseStatusMessage = "Response from server displayed above";
         private string postingClaimStatusMessage = "POSTing claim to server....";
         private string responseLabelText = "Response from server:";
+        private string dump;
 
         public createCaseForm()
         {
             InitializeComponent();
             initializeCaseTypeComboBox();
             initializeAdvocateCategoryComboBox();
+            initializeCourtCombobox();
             statusMessage.Text = fillFormStatusMessage;
             sentToServerLabel.Text = "";
         }
@@ -44,6 +48,19 @@ namespace ADPAPIClient
             advocateCategoryComboBox.DataSource = apiConstants.advocateCategories;
             advocateCategoryComboBox.DisplayMember = "Description";
             advocateCategoryComboBox.ValueMember = "Id";
+        }
+
+        private void initializeCourtCombobox()
+        {
+
+            courtComboBox.DataSource = apiConstants.courts;
+            courtComboBox.DisplayMember = "Name";
+            courtComboBox.ValueMember = "Id";
+            //foreach (Court court in apiConstants.courts)
+            //{dump += court.Id.ToString() + "," + court.Code + "," + court.Name + "," + court.Courtype + "\n";}
+            //MessageBox.Show(dump, "dump of parse courts json as court object", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
         }
 
         private void createCaseButton_Click(object sender, EventArgs e)
@@ -73,6 +90,7 @@ namespace ADPAPIClient
             myCase.advocateEmail = advocateEmailTextBox.Text;
             myCase.caseNumber = caseNumberTextBox.Text;
             myCase.caseType = caseTypeComboBox.SelectedValue.ToString();
+            myCase.courtId = courtComboBox.SelectedValue.ToString();
             myCase.prosecutingAuthority = prosecutingAuthorityTextBox.Text;
             myCase.indictmentNumber = indictmentNumberTextBox.Text;
             myCase.trialStartDate = trialStartDatePicker.Value;
@@ -81,6 +99,7 @@ namespace ADPAPIClient
             myCase.endTrialDate = trialEndDatePicker.Value;
             myCase.advocateCategory = advocateCategoryComboBox.Text;
             myCase.cmsNumber = cmsNumberTextBox.Text;
+            myCase.additionalInformation = additionalInformation.Text;
             return myCase;
         }
 
@@ -110,6 +129,20 @@ namespace ADPAPIClient
         }
 
         private void sentToServerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void getCourts_Click(object sender, EventArgs e)
+        {
+            HttpClient client = new HttpClient();
+            string response = client.getCourts();
+            messageLabel.Text = "Status: " + client.responseStatusCode + "  " + response;
+            MessageBox.Show("Response: " + client.responseStatusCode + "  " + response, "Response form courts endpoint", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void caseTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
