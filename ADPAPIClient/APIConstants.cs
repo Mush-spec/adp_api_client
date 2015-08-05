@@ -53,9 +53,14 @@ namespace ADPAPIClient
 
         public APIConstants()
         {
+            instantiateCourts();
+        }
+
+        //example of retrieving lookup data from API endpoint
+        public void instantiateCourts()
+        {
             HttpClient client = new HttpClient();
             string json = client.getCourts();
-            //MessageBox.Show("Response: " + client.responseStatusCode + "\n" + json, "Response form courts endpoint", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             JArray courtArray = JArray.Parse(json);
             IList<JToken> tokens = courtArray.Children().ToList();
@@ -65,7 +70,6 @@ namespace ADPAPIClient
                 Court court = JsonConvert.DeserializeObject<Court>(token.ToString());
                 courts.Add(court);
             }
-
         }
 
         public NamedEntity[] caseTypes = new NamedEntity[]
@@ -97,7 +101,7 @@ namespace ADPAPIClient
         };
 
         //not required
-        public NamedEntity[] trialCrackedAtThirdTypes = new NamedEntity[]
+        public NamedEntity[] trialCrackedAtThirds = new NamedEntity[]
         {
             new NamedEntity(0,"", "--- Select cracked third category ---"),
             new NamedEntity(1,"first_third","First Third"),

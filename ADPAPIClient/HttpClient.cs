@@ -10,7 +10,6 @@ namespace ADPAPIClient
 {
     class HttpClient
     {
-
         private string protocol;
         private string host;
         private string port;
