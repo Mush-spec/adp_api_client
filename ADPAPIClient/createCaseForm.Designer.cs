@@ -65,8 +65,6 @@
             this.trialFixedNoticeDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.trialFixedDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.prosecutingAuthorityTextBox = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.applyVatCheckBox = new System.Windows.Forms.CheckBox();
             this.populateButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -133,7 +131,6 @@
             // caseTypeComboBox
             // 
             this.caseTypeComboBox.AllowDrop = true;
-            this.caseTypeComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.caseTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.caseTypeComboBox.FormattingEnabled = true;
             this.caseTypeComboBox.Location = new System.Drawing.Point(562, 77);
@@ -419,22 +416,6 @@
             this.trialFixedDatePicker.TabIndex = 8;
             this.trialFixedDatePicker.ValueChanged += new System.EventHandler(this.trialFixedDatePicker_ValueChanged);
             // 
-            // prosecutingAuthorityTextBox
-            // 
-            this.prosecutingAuthorityTextBox.Location = new System.Drawing.Point(562, 141);
-            this.prosecutingAuthorityTextBox.Name = "prosecutingAuthorityTextBox";
-            this.prosecutingAuthorityTextBox.Size = new System.Drawing.Size(100, 20);
-            this.prosecutingAuthorityTextBox.TabIndex = 7;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(453, 145);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Prosecuting authority";
-            // 
             // applyVatCheckBox
             // 
             this.applyVatCheckBox.AutoSize = true;
@@ -511,6 +492,7 @@
             this.courtComboBox.Name = "courtComboBox";
             this.courtComboBox.Size = new System.Drawing.Size(161, 21);
             this.courtComboBox.TabIndex = 119;
+            this.courtComboBox.SelectedIndexChanged += new System.EventHandler(this.courtComboBox_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -536,8 +518,6 @@
             this.Controls.Add(this.actualTrialLengthNumericUpDown);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.trialEndDatePicker);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.prosecutingAuthorityTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.estimatedTrialLengthNumericUpdown);
             this.Controls.Add(this.label8);
@@ -603,8 +583,6 @@
         private System.Windows.Forms.NumericUpDown actualTrialLengthNumericUpDown;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox prosecutingAuthorityTextBox;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox applyVatCheckBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker trialCrackedDatePicker;
