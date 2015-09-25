@@ -45,7 +45,19 @@ namespace ADPAPIClient
 
         public string getCourts()
         {
-            fullUrl = getUrl("courts");
+            return getEndpointResponse("courts");
+        }
+
+        public string getCaseTypes()
+        {
+            return getEndpointResponse("case_types");
+        }
+
+        // private --------------------------------
+
+        private string getEndpointResponse(string endpointSuffix)
+        {
+            fullUrl = getUrl(endpointSuffix);
             WebClient client = instantiateClient();
             try
             {
@@ -95,7 +107,7 @@ namespace ADPAPIClient
         }
 
 
-        public string getUrl(string endpoint)
+        private string getUrl(string endpoint)
         {
             return protocol + "://" + host + ":" + port + "/" + baseUrl + "/" + endpoint;
         }

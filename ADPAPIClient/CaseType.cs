@@ -9,19 +9,21 @@ using Newtonsoft.Json;
 
 namespace ADPAPIClient
 {
-    class Court
+    class CaseType
     {
         public int Id { get; set; }
-        public string Code { get; set; }
         public string Name { get; set; }
-        public string Courtype { get; set; }
+        public bool IsFixedFee { get; set; }
+        public bool RequiresCrackedDates { get; set; }
+        public bool RequiresTrialDates { get; set; }
+        public bool RequiresMaatReference{ get; set; }
 
-        public Court()
+        public CaseType()
         {
-            
+
 
 
         }
-        
+
     }
 }

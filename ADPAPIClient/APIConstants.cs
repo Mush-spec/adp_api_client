@@ -9,21 +9,6 @@ using System.Windows.Forms;
 
 //using ADPAPIClient;
 
-// case_types:
-//   - appeal_against_conviction
-//   - appeal_against_sentence
-//   - breach_of_crown_court_order
-//   - commital_for_sentence
-//   - contempt
-//   - cracked_trial
-//   - cracked_before_retrial
-//   - discontinuance
-//   - elected_cases_not_proceeded
-//   - fixed_fee
-//   - guilty_plea
-//   - retrial
-//   - trial
-
 // trial_cracked_at_third:
 //   - first_third
 //   - second_third
@@ -34,9 +19,6 @@ using System.Windows.Forms;
 //   - Led junior
 //   - Leading junior
 //   - Junior alone
-
-// prosecuting_authorities:
-//   - cps
 
 // court_types:
 //    - Magistrate's Court
@@ -50,13 +32,32 @@ namespace ADPAPIClient
     class APIConstants
     {
         public IList<Court> courts = new List<Court>();
+        public IList<CaseType> caseTypes = new List<CaseType>();
 
         public APIConstants()
         {
             instantiateCourts();
+            instantiateCaseTypes();
         }
 
-        //example of retrieving lookup data from API endpoint
+
+        //example of retrieving case type lookup data from API endpoint
+        public void instantiateCaseTypes()
+        {
+            HttpClient client = new HttpClient();
+            string json = client.getCaseTypes();
+
+            JArray caseTypeArray = JArray.Parse(json);
+            IList<JToken> tokens = caseTypeArray.Children().ToList();
+
+            foreach (JToken token in tokens)
+            {
+                CaseType caseType = JsonConvert.DeserializeObject<CaseType>(token.ToString());
+                caseTypes.Add(caseType);
+            }
+        }
+
+        //example of retrieving court lookup data from API endpoint
         public void instantiateCourts()
         {
             HttpClient client = new HttpClient();
@@ -71,25 +72,6 @@ namespace ADPAPIClient
                 courts.Add(court);
             }
         }
-
-        public NamedEntity[] caseTypes = new NamedEntity[]
-        {
-            new NamedEntity(0,"", "--- Select case type ---"),
-            new NamedEntity(1,"appeal_against_conviction", "Appeal against conviction"),
-            new NamedEntity(2,"appeal_against_sentence", "Appeal against sentence"),
-            new NamedEntity(3,",breach_of_crown_court_order", "Breach of Crown Court order"),
-            new NamedEntity(4,"commital_for_sentence", "Commital for Sentence"),
-            new NamedEntity(5,"contempt", "Contempt"),
-            new NamedEntity(6,"cracked_trial", "Cracked trial"),
-            new NamedEntity(7,"cracked_before_retrial", "Cracked before retrial"),
-            new NamedEntity(8,"discontinuance", "Discontinuance"),
-            new NamedEntity(9,"fixed_fee", "Fixed Fee"),
-            new NamedEntity(10,"elected_cases_not_proceeded", "Elected cases not proceeded"),
-            new NamedEntity(11,"guilty_plea", "Guilty Plea"),
-            new NamedEntity(12,"retrial", "Retrial"),
-            new NamedEntity(13,"trial", "Trial"),
-
-        };
 
         public NamedEntity[] advocateCategories = new NamedEntity[]
         {

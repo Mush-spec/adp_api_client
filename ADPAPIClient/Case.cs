@@ -19,7 +19,6 @@ namespace ADPAPIClient
         public string cmsNumber { private get; set; }
         public string indictmentNumber { private get; set; }
         public string advocateCategory { private get; set; }
-        public string prosecutingAuthority { private get; set; }
         public string additionalInformation { private get; set; }
 
         public decimal estimatedTrialLength { private get; set; }
@@ -46,10 +45,9 @@ namespace ADPAPIClient
             // mandatory fields
             myDict.Add("advocate_email", this.advocateEmail);
             myDict.Add("case_number", this.caseNumber);
-            myDict.Add("case_type", this.caseType);
+            myDict.Add("case_type_id", this.caseType);
             myDict.Add("court_id", this.courtId);
             myDict.Add("offence_id", "36");
-            myDict.Add("prosecuting_authority", this.prosecutingAuthority);
 
             myDict.Add("indictment_number", this.indictmentNumber);
             myDict.Add("first_day_of_trial", convertDate(this.trialStartDate));
@@ -78,8 +76,8 @@ namespace ADPAPIClient
             string result = "";
             if (date != new DateTime())
             {
-                //see MSDN Round-trip ("o") format specified
-                result = date.ToString("o");
+                //see MSDN Round-trip ("s") format specified - ISO 8601 compliant
+                result = date.ToString("s");
             }
             return result;
         }
