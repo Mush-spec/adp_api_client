@@ -18,6 +18,7 @@ namespace ADPAPIClient
 
         public string fullUrl;
         public HttpStatusCode responseStatusCode;
+        
 
         public HttpClient()
         {
@@ -57,7 +58,7 @@ namespace ADPAPIClient
 
         private string getEndpointResponse(string endpointSuffix)
         {
-            fullUrl = getUrl(endpointSuffix);
+            fullUrl = getUrl(endpointSuffix + "?api_key=" + APIConstants.ApiKey );
             WebClient client = instantiateClient();
             try
             {

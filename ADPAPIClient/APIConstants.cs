@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 //using ADPAPIClient;
 
@@ -34,12 +35,21 @@ namespace ADPAPIClient
         public IList<Court> courts = new List<Court>();
         public IList<CaseType> caseTypes = new List<CaseType>();
 
+        private static string _apiKey = ConfigurationManager.AppSettings["SecretApiKey"];
+
         public APIConstants()
         {
             instantiateCourts();
             instantiateCaseTypes();
         }
 
+        public static string ApiKey
+        {
+            get
+            {
+                return _apiKey;
+            }
+        }
 
         //example of retrieving case type lookup data from API endpoint
         public void instantiateCaseTypes()
@@ -75,7 +85,7 @@ namespace ADPAPIClient
 
         public NamedEntity[] advocateCategories = new NamedEntity[]
         {
-            new NamedEntity(0,"", "--- Select advocate category ---"),
+            new NamedEntity(0,"", "-Select advocate category-"),
             new NamedEntity(1,"QC","QC"),
             new NamedEntity(2,"Led junior","Led junior"),
             new NamedEntity(3,"Leading junior","Leading junior"),
@@ -85,7 +95,7 @@ namespace ADPAPIClient
         //not required
         public NamedEntity[] trialCrackedAtThirds = new NamedEntity[]
         {
-            new NamedEntity(0,"", "--- Select cracked third category ---"),
+            new NamedEntity(0,"", "-Select cracked third category-"),
             new NamedEntity(1,"first_third","First Third"),
             new NamedEntity(2,"second_third","Second Third"),
             new NamedEntity(3,"final_third","Final Third"),

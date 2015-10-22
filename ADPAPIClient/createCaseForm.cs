@@ -75,7 +75,7 @@ namespace ADPAPIClient
             sentToServerLabel.Text = formatSentToServerLabel(client, payload);
             statusMessage.Text = displayResponseStatusMessage;
             responseLabel.Text = responseLabelText;
-            messageLabel.Text = "Status: " + client.responseStatusCode + "  " + response;
+            serverResponseLabel.Text = "Status: " + client.responseStatusCode + "  " + response;
         }
 
 
@@ -88,6 +88,8 @@ namespace ADPAPIClient
         private Case populateCase()
         {
             Case myCase = new Case();
+            myCase.apiKey = APIConstants.ApiKey;
+            myCase.creatorEmail = creatorEmailTextBox.Text;
             myCase.advocateEmail = advocateEmailTextBox.Text;
             myCase.caseNumber = caseNumberTextBox.Text;
             myCase.caseType = caseTypeComboBox.SelectedValue.ToString();
@@ -112,13 +114,14 @@ namespace ADPAPIClient
 
         private void advocateEmailTextBox_Enter(object sender, EventArgs e)
         {
-            messageLabel.Text = "";
+            serverResponseLabel.Text = "";
             responseLabel.Text = "";
             statusMessage.Text = fillFormStatusMessage;
         }
 
         private void populateButton_Click(object sender, EventArgs e)
         {
+            creatorEmailTextBox.Text = "advocateadmin@example.com";
             advocateEmailTextBox.Text = "advocate@example.com";
             caseNumberTextBox.Text = "C87654321";
             indictmentNumberTextBox.Text = "IND-3553";
@@ -141,7 +144,7 @@ namespace ADPAPIClient
         {
             HttpClient client = new HttpClient();
             string response = client.getCourts();
-            messageLabel.Text = "Status: " + client.responseStatusCode + "  " + response;
+            serverResponseLabel.Text = "Status: " + client.responseStatusCode + "  " + response;
             MessageBox.Show("Response: " + client.responseStatusCode + "  " + response, "Response form courts endpoint", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }

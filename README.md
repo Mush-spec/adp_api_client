@@ -78,3 +78,13 @@ In Visual Studio, ensure that the hard-coded IP address matches the IP address t
 
 * Navigate to the file HttpClient.cs
 * Change the host instance variable to the required IP address
+
+### 10. API Key Authentication
+
+This repository does not contain any API key necessary to authenticate all requests to the ADP API endpoints. To authenticate requests you must create a secrets.config file in the same directory as App.config and place the xml below into it:
+
+    <appSettings>
+      <add key="SecretApiKey" value="your-api-key-here" />
+    </appSettings>
+
+The API key itself must be obtained from the ADP web application by logging in with your advocate administrator account details and viewing the "Manage chamber" page.
