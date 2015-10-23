@@ -11,6 +11,8 @@ namespace ADPAPIClient
 {
     class Case
     {
+        public string apiKey { private get; set; }
+        public string creatorEmail { private get; set; }
         public string advocateEmail { private get; set; }
         public string caseNumber { private get; set; }
         public string caseType { private get; set; }
@@ -43,6 +45,8 @@ namespace ADPAPIClient
             Dictionary<string, string> myDict = new Dictionary<string, string>();
 
             // mandatory fields
+            myDict.Add("api_key", this.apiKey);
+            myDict.Add("creator_email", this.creatorEmail);
             myDict.Add("advocate_email", this.advocateEmail);
             myDict.Add("case_number", this.caseNumber);
             myDict.Add("case_type_id", this.caseType);

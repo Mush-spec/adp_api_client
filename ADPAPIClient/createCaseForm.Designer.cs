@@ -67,18 +67,20 @@
             this.trialFixedDatePicker = new System.Windows.Forms.DateTimePicker();
             this.applyVatCheckBox = new System.Windows.Forms.CheckBox();
             this.populateButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.serverResponseBox = new System.Windows.Forms.GroupBox();
+            this.serverResponseLabel = new System.Windows.Forms.Label();
+            this.SentToServerBox = new System.Windows.Forms.GroupBox();
             this.sentToServerLabel = new System.Windows.Forms.Label();
             this.courtComboBox = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.creatorEmailTextBox = new System.Windows.Forms.TextBox();
+            this.creatorEmailLabel = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estimatedTrialLengthNumericUpdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.serverResponseBox.SuspendLayout();
+            this.SentToServerBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -95,7 +97,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 52);
+            this.label1.Location = new System.Drawing.Point(24, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 1;
@@ -104,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 85);
+            this.label2.Location = new System.Drawing.Point(35, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 2;
@@ -122,7 +124,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 35);
+            this.label4.Location = new System.Drawing.Point(35, 19);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 4;
@@ -141,7 +143,7 @@
             // 
             // advocateEmailTextBox
             // 
-            this.advocateEmailTextBox.Location = new System.Drawing.Point(110, 48);
+            this.advocateEmailTextBox.Location = new System.Drawing.Point(111, 65);
             this.advocateEmailTextBox.Name = "advocateEmailTextBox";
             this.advocateEmailTextBox.Size = new System.Drawing.Size(166, 20);
             this.advocateEmailTextBox.TabIndex = 1;
@@ -149,21 +151,21 @@
             // 
             // caseNumberTextBox
             // 
-            this.caseNumberTextBox.Location = new System.Drawing.Point(110, 78);
+            this.caseNumberTextBox.Location = new System.Drawing.Point(111, 88);
             this.caseNumberTextBox.Name = "caseNumberTextBox";
             this.caseNumberTextBox.Size = new System.Drawing.Size(166, 20);
             this.caseNumberTextBox.TabIndex = 2;
             // 
             // cmsNumberTextBox
             // 
-            this.cmsNumberTextBox.Location = new System.Drawing.Point(109, 32);
+            this.cmsNumberTextBox.Location = new System.Drawing.Point(109, 16);
             this.cmsNumberTextBox.Name = "cmsNumberTextBox";
             this.cmsNumberTextBox.Size = new System.Drawing.Size(140, 20);
             this.cmsNumberTextBox.TabIndex = 4;
             // 
             // createCaseButton
             // 
-            this.createCaseButton.Location = new System.Drawing.Point(25, 439);
+            this.createCaseButton.Location = new System.Drawing.Point(25, 400);
             this.createCaseButton.Name = "createCaseButton";
             this.createCaseButton.Size = new System.Drawing.Size(75, 23);
             this.createCaseButton.TabIndex = 5;
@@ -226,7 +228,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 113);
+            this.label7.Location = new System.Drawing.Point(28, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 105;
@@ -234,7 +236,7 @@
             // 
             // indictmentNumberTextBox
             // 
-            this.indictmentNumberTextBox.Location = new System.Drawing.Point(110, 110);
+            this.indictmentNumberTextBox.Location = new System.Drawing.Point(111, 111);
             this.indictmentNumberTextBox.Name = "indictmentNumberTextBox";
             this.indictmentNumberTextBox.Size = new System.Drawing.Size(166, 20);
             this.indictmentNumberTextBox.TabIndex = 106;
@@ -319,9 +321,9 @@
             this.groupBox1.Controls.Add(this.applyVatCheckBox);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmsNumberTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(27, 215);
+            this.groupBox1.Location = new System.Drawing.Point(27, 195);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(691, 218);
+            this.groupBox1.Size = new System.Drawing.Size(691, 199);
             this.groupBox1.TabIndex = 115;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Optional fields";
@@ -329,7 +331,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(386, 95);
+            this.label15.Location = new System.Drawing.Point(386, 48);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 13);
             this.label15.TabIndex = 19;
@@ -339,7 +341,7 @@
             // 
             this.trialCrackAtThirdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.trialCrackAtThirdComboBox.FormattingEnabled = true;
-            this.trialCrackAtThirdComboBox.Location = new System.Drawing.Point(507, 92);
+            this.trialCrackAtThirdComboBox.Location = new System.Drawing.Point(506, 42);
             this.trialCrackAtThirdComboBox.Name = "trialCrackAtThirdComboBox";
             this.trialCrackAtThirdComboBox.Size = new System.Drawing.Size(161, 21);
             this.trialCrackAtThirdComboBox.TabIndex = 18;
@@ -355,7 +357,7 @@
             // 
             // additionalInformation
             // 
-            this.additionalInformation.Location = new System.Drawing.Point(109, 135);
+            this.additionalInformation.Location = new System.Drawing.Point(109, 115);
             this.additionalInformation.Multiline = true;
             this.additionalInformation.Name = "additionalInformation";
             this.additionalInformation.Size = new System.Drawing.Size(531, 77);
@@ -364,7 +366,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(407, 64);
+            this.label16.Location = new System.Drawing.Point(407, 19);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(93, 13);
             this.label16.TabIndex = 15;
@@ -373,7 +375,7 @@
             // trialCrackedDatePicker
             // 
             this.trialCrackedDatePicker.Checked = false;
-            this.trialCrackedDatePicker.Location = new System.Drawing.Point(506, 57);
+            this.trialCrackedDatePicker.Location = new System.Drawing.Point(506, 16);
             this.trialCrackedDatePicker.Name = "trialCrackedDatePicker";
             this.trialCrackedDatePicker.ShowCheckBox = true;
             this.trialCrackedDatePicker.Size = new System.Drawing.Size(134, 20);
@@ -382,7 +384,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(-5, 91);
+            this.label14.Location = new System.Drawing.Point(-5, 75);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(108, 13);
             this.label14.TabIndex = 11;
@@ -391,7 +393,7 @@
             // trialFixedNoticeDatePicker
             // 
             this.trialFixedNoticeDatePicker.Checked = false;
-            this.trialFixedNoticeDatePicker.Location = new System.Drawing.Point(109, 85);
+            this.trialFixedNoticeDatePicker.Location = new System.Drawing.Point(109, 69);
             this.trialFixedNoticeDatePicker.Name = "trialFixedNoticeDatePicker";
             this.trialFixedNoticeDatePicker.ShowCheckBox = true;
             this.trialFixedNoticeDatePicker.Size = new System.Drawing.Size(140, 20);
@@ -400,7 +402,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 64);
+            this.label13.Location = new System.Drawing.Point(27, 48);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(76, 13);
             this.label13.TabIndex = 9;
@@ -409,7 +411,7 @@
             // trialFixedDatePicker
             // 
             this.trialFixedDatePicker.Checked = false;
-            this.trialFixedDatePicker.Location = new System.Drawing.Point(109, 58);
+            this.trialFixedDatePicker.Location = new System.Drawing.Point(109, 42);
             this.trialFixedDatePicker.Name = "trialFixedDatePicker";
             this.trialFixedDatePicker.ShowCheckBox = true;
             this.trialFixedDatePicker.Size = new System.Drawing.Size(140, 20);
@@ -419,7 +421,7 @@
             // applyVatCheckBox
             // 
             this.applyVatCheckBox.AutoSize = true;
-            this.applyVatCheckBox.Location = new System.Drawing.Point(109, 111);
+            this.applyVatCheckBox.Location = new System.Drawing.Point(109, 95);
             this.applyVatCheckBox.Name = "applyVatCheckBox";
             this.applyVatCheckBox.Size = new System.Drawing.Size(76, 17);
             this.applyVatCheckBox.TabIndex = 5;
@@ -428,7 +430,7 @@
             // 
             // populateButton
             // 
-            this.populateButton.Location = new System.Drawing.Point(565, 439);
+            this.populateButton.Location = new System.Drawing.Point(565, 400);
             this.populateButton.Name = "populateButton";
             this.populateButton.Size = new System.Drawing.Size(153, 23);
             this.populateButton.TabIndex = 116;
@@ -436,39 +438,39 @@
             this.populateButton.UseVisualStyleBackColor = true;
             this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
             // 
-            // groupBox2
+            // serverResponseBox
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox2.Controls.Add(this.messageLabel);
-            this.groupBox2.Location = new System.Drawing.Point(25, 653);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(700, 174);
-            this.groupBox2.TabIndex = 117;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ServerResponse";
+            this.serverResponseBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.serverResponseBox.Controls.Add(this.serverResponseLabel);
+            this.serverResponseBox.Location = new System.Drawing.Point(27, 602);
+            this.serverResponseBox.Name = "serverResponseBox";
+            this.serverResponseBox.Size = new System.Drawing.Size(700, 173);
+            this.serverResponseBox.TabIndex = 117;
+            this.serverResponseBox.TabStop = false;
+            this.serverResponseBox.Text = "Server Response";
             // 
-            // messageLabel
+            // serverResponseLabel
             // 
-            this.messageLabel.AutoSize = true;
-            this.messageLabel.BackColor = System.Drawing.SystemColors.Info;
-            this.messageLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageLabel.Location = new System.Drawing.Point(7, 18);
-            this.messageLabel.MaximumSize = new System.Drawing.Size(680, 0);
-            this.messageLabel.MinimumSize = new System.Drawing.Size(680, 140);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(680, 140);
-            this.messageLabel.TabIndex = 100;
+            this.serverResponseLabel.AutoSize = true;
+            this.serverResponseLabel.BackColor = System.Drawing.SystemColors.Info;
+            this.serverResponseLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.serverResponseLabel.Location = new System.Drawing.Point(7, 19);
+            this.serverResponseLabel.MaximumSize = new System.Drawing.Size(680, 0);
+            this.serverResponseLabel.MinimumSize = new System.Drawing.Size(680, 140);
+            this.serverResponseLabel.Name = "serverResponseLabel";
+            this.serverResponseLabel.Size = new System.Drawing.Size(680, 140);
+            this.serverResponseLabel.TabIndex = 100;
             // 
-            // groupBox3
+            // SentToServerBox
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox3.Controls.Add(this.sentToServerLabel);
-            this.groupBox3.Location = new System.Drawing.Point(27, 468);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(700, 174);
-            this.groupBox3.TabIndex = 118;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Sent to Server";
+            this.SentToServerBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SentToServerBox.Controls.Add(this.sentToServerLabel);
+            this.SentToServerBox.Location = new System.Drawing.Point(27, 427);
+            this.SentToServerBox.Name = "SentToServerBox";
+            this.SentToServerBox.Size = new System.Drawing.Size(700, 174);
+            this.SentToServerBox.TabIndex = 118;
+            this.SentToServerBox.TabStop = false;
+            this.SentToServerBox.Text = "Sent to Server";
             // 
             // sentToServerLabel
             // 
@@ -476,7 +478,7 @@
             this.sentToServerLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.sentToServerLabel.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sentToServerLabel.ForeColor = System.Drawing.SystemColors.Info;
-            this.sentToServerLabel.Location = new System.Drawing.Point(8, 16);
+            this.sentToServerLabel.Location = new System.Drawing.Point(8, 19);
             this.sentToServerLabel.MaximumSize = new System.Drawing.Size(680, 0);
             this.sentToServerLabel.MinimumSize = new System.Drawing.Size(680, 150);
             this.sentToServerLabel.Name = "sentToServerLabel";
@@ -503,15 +505,33 @@
             this.label18.TabIndex = 120;
             this.label18.Text = "Court";
             // 
+            // creatorEmailTextBox
+            // 
+            this.creatorEmailTextBox.Location = new System.Drawing.Point(111, 41);
+            this.creatorEmailTextBox.Name = "creatorEmailTextBox";
+            this.creatorEmailTextBox.Size = new System.Drawing.Size(166, 20);
+            this.creatorEmailTextBox.TabIndex = 121;
+            // 
+            // creatorEmailLabel
+            // 
+            this.creatorEmailLabel.AutoSize = true;
+            this.creatorEmailLabel.Location = new System.Drawing.Point(36, 44);
+            this.creatorEmailLabel.Name = "creatorEmailLabel";
+            this.creatorEmailLabel.Size = new System.Drawing.Size(68, 13);
+            this.creatorEmailLabel.TabIndex = 122;
+            this.creatorEmailLabel.Text = "Creator email";
+            // 
             // createCaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 804);
+            this.Controls.Add(this.creatorEmailLabel);
+            this.Controls.Add(this.creatorEmailTextBox);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.courtComboBox);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.SentToServerBox);
+            this.Controls.Add(this.serverResponseBox);
             this.Controls.Add(this.populateButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label11);
@@ -545,10 +565,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.actualTrialLengthNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.serverResponseBox.ResumeLayout(false);
+            this.serverResponseBox.PerformLayout();
+            this.SentToServerBox.ResumeLayout(false);
+            this.SentToServerBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -590,17 +610,19 @@
         private System.Windows.Forms.DateTimePicker trialFixedNoticeDatePicker;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button populateButton;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox serverResponseBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox additionalInformation;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox SentToServerBox;
         private System.Windows.Forms.Label sentToServerLabel;
-        private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.Label serverResponseLabel;
         private System.Windows.Forms.ComboBox courtComboBox;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox trialCrackAtThirdComboBox;
         private System.Windows.Forms.DateTimePicker trialFixedDatePicker;
+        private System.Windows.Forms.TextBox creatorEmailTextBox;
+        private System.Windows.Forms.Label creatorEmailLabel;
     }
 }
 
