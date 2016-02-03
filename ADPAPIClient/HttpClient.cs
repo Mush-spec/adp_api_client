@@ -23,14 +23,14 @@ namespace ADPAPIClient
         public HttpClient()
         {
             this.protocol = "http";
-            this.host = "192.168.33.1";
+            this.host = "172.22.6.40";
             this.port = "3000";
             this.baseUrl = "api";
         }
 
         public string createClaim(string jsonPayload)
         {
-            fullUrl = getUrl("advocates/claims.json");
+            fullUrl = getUrl("external_users/claims.json");
             WebClient client = instantiateClient();
             try
             {
