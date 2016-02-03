@@ -44,8 +44,6 @@
             this.responseLabel = new System.Windows.Forms.Label();
             this.advocateCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.indictmentNumberTextBox = new System.Windows.Forms.TextBox();
             this.trialStartDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.estimatedTrialLengthNumericUpdown = new System.Windows.Forms.NumericUpDown();
@@ -224,22 +222,6 @@
             this.label6.Size = new System.Drawing.Size(98, 13);
             this.label6.TabIndex = 104;
             this.label6.Text = "Advocate Category";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 114);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 13);
-            this.label7.TabIndex = 105;
-            this.label7.Text = "Indictment No.";
-            // 
-            // indictmentNumberTextBox
-            // 
-            this.indictmentNumberTextBox.Location = new System.Drawing.Point(111, 111);
-            this.indictmentNumberTextBox.Name = "indictmentNumberTextBox";
-            this.indictmentNumberTextBox.Size = new System.Drawing.Size(166, 20);
-            this.indictmentNumberTextBox.TabIndex = 106;
             // 
             // trialStartDatePicker
             // 
@@ -542,8 +524,6 @@
             this.Controls.Add(this.estimatedTrialLengthNumericUpdown);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.trialStartDatePicker);
-            this.Controls.Add(this.indictmentNumberTextBox);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.advocateCategoryComboBox);
             this.Controls.Add(this.responseLabel);
@@ -559,6 +539,7 @@
             this.Controls.Add(this.titleLabel);
             this.Name = "createCaseForm";
             this.Text = "ADP Client";
+            this.Load += new System.EventHandler(this.createCaseForm_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.estimatedTrialLengthNumericUpdown)).EndInit();
@@ -592,8 +573,6 @@
         private System.Windows.Forms.Label responseLabel;
         private System.Windows.Forms.ComboBox advocateCategoryComboBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox indictmentNumberTextBox;
         private System.Windows.Forms.DateTimePicker trialStartDatePicker;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown estimatedTrialLengthNumericUpdown;

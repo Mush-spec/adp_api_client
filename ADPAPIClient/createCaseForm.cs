@@ -94,7 +94,6 @@ namespace ADPAPIClient
             myCase.caseNumber = caseNumberTextBox.Text;
             myCase.caseType = caseTypeComboBox.SelectedValue.ToString();
             myCase.courtId = courtComboBox.SelectedValue.ToString();
-            myCase.indictmentNumber = indictmentNumberTextBox.Text;
             myCase.trialStartDate = trialStartDatePicker.Value;
             myCase.estimatedTrialLength = estimatedTrialLengthNumericUpdown.Value;
             myCase.actualTrialLength = actualTrialLengthNumericUpDown.Value;
@@ -124,7 +123,6 @@ namespace ADPAPIClient
             creatorEmailTextBox.Text = "advocateadmin@example.com";
             advocateEmailTextBox.Text = "advocate@example.com";
             caseNumberTextBox.Text = "C87654321";
-            indictmentNumberTextBox.Text = "IND-3553";
             trialStartDatePicker.Value = new DateTime(2015, 5, 17);
             estimatedTrialLengthNumericUpdown.Value = 3;
             actualTrialLengthNumericUpDown.Value = 3;
@@ -165,6 +163,11 @@ namespace ADPAPIClient
         }
 
         private void courtComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createCaseForm_Load(object sender, EventArgs e)
         {
 
         }
