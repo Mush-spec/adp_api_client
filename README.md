@@ -1,10 +1,13 @@
 
-#ADP API CLIENT
+#CCCD API CLIENT
 
 ## Overview
 
 This is a .NET application written in C# designed to demonstrate how to communicate with the 
-Advocate Defence Payments API from the .NET World.
+Claim for Crown Court Defence API from the .NET World.
+
+It is by no means complete; it will generate a claim with minimal information only - it does not add fees or expenses.  The purpose
+of this app is to demonstrate communication from a C# application to retreive data from and post data to the CCCD system using the API.
 
 
 
